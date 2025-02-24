@@ -1,20 +1,22 @@
 package vlasov.openweather.data;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-
-@Getter
 @EqualsAndHashCode
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-class Wind {
-    private final float speed;
+public class CityData {
 
-    @JsonCreator
-    Wind(@JsonProperty("speed") float speed) {
-        this.speed = speed;
-    }
+    @JsonProperty("lat")
+    private double latitude;
+    @JsonProperty("lon")
+    private double longitude;
+    private String name;
 }
