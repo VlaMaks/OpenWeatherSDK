@@ -1,6 +1,6 @@
 package vlasov.openweather.exceptions;
 
-public class ApiKeyException extends RuntimeException {
+public class ApiKeyException extends Exception {
     public ApiKeyException(String message) {
         super(message);
     }
